@@ -107,7 +107,7 @@ section{padding:96px 0 0}
 .dots{display:flex;gap:11px;align-items:center}
 .dots button{width:10px;height:10px;padding:0;border:0;border-radius:99px;background:var(--bd);cursor:pointer;transition:width .4s cubic-bezier(.2,.8,.2,1),background .3s}
 .dots button.on{width:42px;background:linear-gradient(90deg,var(--v),var(--a))}
-/* expertise */
+/* expertise (sans pourcentages) */
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
 .chips button{font:600 15px var(--fb);padding:12px 22px;border-radius:99px;border:1.5px solid var(--bd);background:var(--sf);color:var(--tx);cursor:pointer}
 .chips button.on{background:var(--v);border-color:var(--v);color:#fff}
@@ -119,13 +119,9 @@ section{padding:96px 0 0}
 .t .lg{position:absolute;top:14px;left:14px;width:48px;height:48px;border-radius:15px;background:var(--sf);display:grid;place-items:center;font:800 15px var(--fd);color:var(--v);box-shadow:0 10px 20px -10px rgba(61,41,35,.5);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .t .lg img{width:28px;height:28px;object-fit:contain}
 .t:hover .lg,.t.on .lg{transform:rotate(-10deg) scale(1.18)}
-.t strong{font:800 34px/1 var(--fd);color:var(--v);letter-spacing:-.04em}.t span{font-size:14px;line-height:1.3}.t em{position:absolute;top:14px;right:16px;font:500 12px var(--fm);color:var(--mu)}
-.t u{position:absolute;left:0;bottom:0;height:5px;width:0;background:linear-gradient(90deg,var(--v),var(--a));transition:width .7s cubic-bezier(.2,.8,.2,1)}
-.t:hover u,.t.on u{width:var(--lv)}
+.t strong{font:800 34px/1 var(--fd);color:var(--v);letter-spacing:-.04em}.t span{font-size:14px;line-height:1.3}
 .ft{background:var(--sf);border:1.5px solid var(--bd);border-radius:28px;padding:26px;position:sticky;top:96px}
-.ft strong{display:block;font:800 84px/1 var(--fd);color:var(--v);letter-spacing:-.05em;margin:50px 0 6px}.ft h3{font:800 26px var(--fd);margin:0 0 14px}
-.bar{height:10px;border-radius:10px;background:var(--vs);overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--v),var(--a));width:0;transition:width .7s cubic-bezier(.2,.8,.2,1)}
-.ft p{margin:10px 0 0;color:var(--mu);font-size:14px}
+.ft strong{display:block;font:800 84px/1 var(--fd);color:var(--v);letter-spacing:-.05em;margin:50px 0 6px}.ft h3{font:800 26px var(--fd);margin:0}
 .fl{position:absolute;top:22px;right:22px;width:70px;height:70px;border-radius:22px;background:var(--vs);display:grid;place-items:center;font:800 22px var(--fd);color:var(--v)}
 .fl img{width:42px;height:42px;object-fit:contain}
 .pop{animation:pp .45s cubic-bezier(.2,.8,.2,1)}
@@ -166,7 +162,7 @@ footer{margin-top:90px;border-top:1.5px solid var(--bd);padding:44px 0;text-alig
   .logo b,.ic{display:none}.top{justify-content:center}.rot{display:none}
 }
 @media (max-width:700px){.p{--cw:262px;height:470px}.th{height:220px;font-size:100px}.stg{height:590px}.nav{gap:12px}.dots{gap:8px}.dots button.on{width:28px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mq div,.rot{animation:none}.in,.btn,.p,.t,.t u,.t .lg,.bar i,.dots button,.vc,.vc i,.fx article{transition:none}.p.on .th>b,.pop{animation:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mq div,.rot{animation:none}.in,.btn,.p,.t,.t .lg,.dots button,.vc,.vc i,.fx article{transition:none}.p.on .th>b,.pop{animation:none}}
 /* Agrandissement du texte */
 body{font-size:19px}
 p{font-size:20px;line-height:1.7}
@@ -184,8 +180,6 @@ p{font-size:20px;line-height:1.7}
 .vc{font-size:17px}
 .chips button{font-size:17px}
 .t span{font-size:16px}
-.t em{font-size:14px}
-.ft p{font-size:16px}
 .cd p{font-size:18px}
 .cd b{font-size:20px}
 .fx p{font-size:17px}
@@ -309,10 +303,10 @@ footer{font-size:16px}
 </div>
 </div></section>
 
-<section id="expertise"><div class="w"><span class="k">Compétences</span><h2>La technique, <em>en valeurs.</em></h2>
+<section id="expertise"><div class="w"><span class="k">Compétences</span><h2>La technique, <em>en pratique.</em></h2>
 <div class="chips" id="ch"></div>
 <div class="ex"><div class="tiles" id="tl"></div>
-<aside class="ft" aria-live="polite"><span class="k">Niveau estimé</span><div class="fl" id="fl"></div><strong id="fa">Ja</strong><h3 id="fn">Java</h3><div class="bar"><i id="fb"></i></div><p id="fv">88 sur 100</p></aside></div></div></section>
+<aside class="ft" aria-live="polite"><span class="k" id="fk">Backend</span><div class="fl" id="fl"></div><strong id="fa">Ja</strong><h3 id="fn">Java</h3></aside></div></div></section>
 
 <section><div class="w"><span class="k">Ce que j’ai construit</span><h2>Au-delà de <em>l’interface.</em></h2>
 <div class="tri">
@@ -320,8 +314,6 @@ footer{font-size:16px}
 <div class="cd"><span class="k">Python · LlamaIndex · Ollama</span><h3>IA et RAG</h3><p>Pipelines qui lisent des PDF et des fichiers Excel et en extraient des données exploitables.</p><b>IA</b></div>
 <div class="cd"><span class="k">Docker · GitHub Actions · Grafana</span><h3>Livraison et suivi</h3><p>Conteneurs, chaînes CI/CD et supervision pour que chaque changement reste sûr.</p><b>DevOps</b></div>
 </div></div></section>
-
-
 
 <section id="parcours">
 <div class="w">
@@ -377,38 +369,92 @@ footer{font-size:16px}
 </main>
 <footer><i>Ta</i>© 2026 Takwa Abdellaoui<br><a href="#top">Retour en haut ↑</a></footer>
 <script>
+/* Icônes */
 var dv=function(n){return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/"+n+"/"+n+"-original.svg"};
 var si=function(n){return "https://cdn.simpleicons.org/"+n+"/B7654A"};
 var fg=function(c){return "https://flagcdn.com/w80/"+c+".png"};
 var ic=function(b){return "data:image/svg+xml,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#B7654A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>"+b+"</svg>")};
-var T=[["Ja","Java","be",88,dv("java")],["Sb","Spring Boot","be",90,dv("spring")],["Rs","API REST","be",90,ic('<path d="M8 6l-5 6 5 6M16 6l5 6-5 6M14 5l-4 14"/>')],["Kf","Kafka","be",78,dv("apachekafka")],["Ms","Microservices","be",85,ic('<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M11 7.3L6 16.7M13 7.3l5 9.4M8 19h8"/>')],["Fa","FastAPI","be",75,dv("fastapi")],["Cc","C / C++","be",65,dv("cplusplus")],
-["Py","Python","ai",90,dv("python")],["Rg","RAG","ai",88,ic('<circle cx="10" cy="10" r="6"/><path d="M15 15l6 6M8 10h4M10 8v4"/>')],["Lc","LangChain / LlamaIndex","ai",82,si("langchain")],["Ol","Ollama / ChromaDB","ai",82,si("ollama")],["Pt","PyTorch","ai",75,dv("pytorch")],["Sk","Scikit-learn","ai",78,dv("scikitlearn")],
-["Ng","Angular","fe",80,dv("angular")],["Re","React","fe",70,dv("react")],["Js","JavaScript","fe",75,dv("javascript")],["Hc","HTML / CSS","fe",80,dv("html5")],
-["Sq","MySQL / PostgreSQL","ops",82,dv("postgresql")],["Dk","Docker","ops",80,dv("docker")],["Ga","GitHub Actions","ops",78,dv("githubactions")],["Pg","Prometheus / Grafana","ops",70,dv("prometheus")],["Mo","MongoDB","ops",65,dv("mongodb")],
-["Fq","Finance quantitative","fin",80,ic('<path d="M4 20V4M4 20h16M8 15l4-5 3 3 5-7"/>')],
-["Mc","Modélisation Monte Carlo","fin",78,ic('<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/>')],
-["Gr","Gestion des risques","fin",75,ic('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>')],
-["Fi","Finance internationale","fin",70,ic('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>')],
-["Gb","Gestion bancaire","fin",72,ic('<path d="M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/>')],
-["Bs","Évaluation d’options","fin",82,ic('<path d="M5 19V9M12 19V5M19 19v-8"/>')],
-["Ts","Séries temporelles (LSTM / GRU)","fin",75,ic('<path d="M3 14c3-8 5 6 9-2s6 4 9-4"/>')],
-["Ar","Arabe","lg",100,fg("tn")],["Fr","Français","lg",90,fg("fr")],["En","Anglais","lg",80,fg("gb")]];
+
+/* Compétences : [abréviation, nom, catégorie, icône] */
+var T=[
+["Ja","Java","be",dv("java")],
+["Sb","Spring Boot","be",dv("spring")],
+["Rs","API REST","be",ic('<path d="M8 6l-5 6 5 6M16 6l5 6-5 6M14 5l-4 14"/>')],
+["Kf","Kafka","be",dv("apachekafka")],
+["Ms","Microservices","be",ic('<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M11 7.3L6 16.7M13 7.3l5 9.4M8 19h8"/>')],
+["Fa","FastAPI","be",dv("fastapi")],
+["Cc","C / C++","be",dv("cplusplus")],
+["Py","Python","ai",dv("python")],
+["Rg","RAG","ai",ic('<circle cx="10" cy="10" r="6"/><path d="M15 15l6 6M8 10h4M10 8v4"/>')],
+["Lc","LangChain / LlamaIndex","ai",si("langchain")],
+["Ol","Ollama / ChromaDB","ai",si("ollama")],
+["Pt","PyTorch","ai",dv("pytorch")],
+["Sk","Scikit-learn","ai",dv("scikitlearn")],
+["Ng","Angular","fe",dv("angular")],
+["Re","React","fe",dv("react")],
+["Js","JavaScript","fe",dv("javascript")],
+["Hc","HTML / CSS","fe",dv("html5")],
+["Sq","MySQL / PostgreSQL","ops",dv("postgresql")],
+["Dk","Docker","ops",dv("docker")],
+["Ga","GitHub Actions","ops",dv("githubactions")],
+["Pg","Prometheus / Grafana","ops",dv("prometheus")],
+["Mo","MongoDB","ops",dv("mongodb")],
+["Fq","Finance quantitative","fin",ic('<path d="M4 20V4M4 20h16M8 15l4-5 3 3 5-7"/>')],
+["Mc","Modélisation Monte Carlo","fin",ic('<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/>')],
+["Gr","Gestion des risques","fin",ic('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>')],
+["Fi","Finance internationale","fin",ic('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>')],
+["Gb","Gestion bancaire","fin",ic('<path d="M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/>')],
+["Bs","Évaluation d’options","fin",ic('<path d="M5 19V9M12 19V5M19 19v-8"/>')],
+["Ts","Séries temporelles (LSTM / GRU)","fin",ic('<path d="M3 14c3-8 5 6 9-2s6 4 9-4"/>')],
+["Ar","Arabe","lg",fg("tn")],
+["Fr","Français","lg",fg("fr")],
+["En","Anglais","lg",fg("gb")]
+];
+var N={be:"Backend",ai:"IA et LLM",fe:"Frontend",ops:"Data et DevOps",fin:"Finance",lg:"Langues"};
 var C=[["all","Tous"],["be","Backend"],["ai","IA et LLM"],["fe","Frontend"],["ops","Data et DevOps"],["fin","Finance"],["lg","Langues"]];
 var $=function(i){return document.getElementById(i)},cur="all";
-function pick(t,el){var fa=$("fa"),l=$("fl");fa.textContent=t[0];$("fn").textContent=t[1];$("fv").textContent=t[3]+" sur 100";$("fb").style.width=t[3]+"%";
-l.innerHTML="";var im=new Image();im.alt="";im.src=t[4];im.onerror=function(){l.textContent=t[0]};l.appendChild(im);
-[fa,l].forEach(function(e){e.classList.remove("pop");void e.offsetWidth;e.classList.add("pop")});
-document.querySelectorAll(".t").forEach(function(x){x.classList.remove("on")});if(el)el.classList.add("on")}
-function draw(){var h="";T.forEach(function(t,i){if(cur=="all"||t[2]==cur)h+='<button class="t" data-i="'+i+'" style="--lv:'+t[3]+'%"><b class="lg"><img src="'+t[4]+'" alt="" loading="lazy"></b><em>'+t[3]+'</em><strong>'+t[0]+'</strong><span>'+t[1]+'</span><u></u></button>'});$("tl").innerHTML=h;
-document.querySelectorAll(".t").forEach(function(b){var go=function(){pick(T[+b.dataset.i],b)};b.onmouseenter=go;b.onfocus=go;b.onclick=go;var im=b.querySelector("img");im.onerror=function(){im.parentNode.textContent=T[+b.dataset.i][0]}});
-var f=document.querySelector(".t");if(f)pick(T[+f.dataset.i],f)}
+
+function pick(t,el){
+  var fa=$("fa"),l=$("fl");
+  fa.textContent=t[0];$("fn").textContent=t[1];$("fk").textContent=N[t[2]];
+  l.innerHTML="";var im=new Image();im.alt="";im.src=t[3];im.onerror=function(){l.textContent=t[0]};l.appendChild(im);
+  [fa,l].forEach(function(e){e.classList.remove("pop");void e.offsetWidth;e.classList.add("pop")});
+  document.querySelectorAll(".t").forEach(function(x){x.classList.remove("on")});
+  if(el)el.classList.add("on");
+}
+function draw(){
+  var h="";
+  T.forEach(function(t,i){
+    if(cur=="all"||t[2]==cur)h+='<button class="t" data-i="'+i+'"><b class="lg"><img src="'+t[3]+'" alt="" loading="lazy"></b><strong>'+t[0]+'</strong><span>'+t[1]+'</span></button>';
+  });
+  $("tl").innerHTML=h;
+  document.querySelectorAll(".t").forEach(function(b){
+    var go=function(){pick(T[+b.dataset.i],b)};
+    b.onmouseenter=go;b.onfocus=go;b.onclick=go;
+    var im=b.querySelector("img");im.onerror=function(){im.parentNode.textContent=T[+b.dataset.i][0]};
+  });
+  var f=document.querySelector(".t");if(f)pick(T[+f.dataset.i],f);
+}
 $("ch").innerHTML=C.map(function(c){return '<button data-c="'+c[0]+'"'+(c[0]=="all"?' class="on"':"")+'>'+c[1]+'</button>'}).join("");
 document.querySelectorAll("#ch button").forEach(function(b){b.onclick=function(){cur=b.dataset.c;document.querySelectorAll("#ch button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");draw()}});
 draw();
-var M=["Java","Spring Boot","Kafka","Angular","Python","RAG","Monte Carlo","Docker","PyTorch","Finance quantitative"],m="";for(var j=0;j<2;j++)M.forEach(function(x){m+="<span>"+x+"</span>"});$("mq").innerHTML=m;
-var L=document.querySelectorAll('.pill a');function spy(){var y=scrollY+140,cur=0;[['#about',0],['#work',1],['#expertise',2],['#parcours',3],['#contact',4]].forEach(function(s){var e=document.querySelector(s[0]);if(e&&e.offsetTop<=y)cur=s[1]});if(scrollY<document.querySelector('#about').offsetTop-200)cur=0;L.forEach(function(a,i){a.classList.toggle('on',i==cur)})}addEventListener('scroll',spy,{passive:true});spy();
 
-/* carrousel projets */
+/* Bandeau défilant */
+var M=["Java","Spring Boot","Kafka","Angular","Python","RAG","Monte Carlo","Docker","PyTorch","Finance quantitative"],m="";
+for(var j=0;j<2;j++)M.forEach(function(x){m+="<span>"+x+"</span>"});
+$("mq").innerHTML=m;
+
+/* Menu : onglet actif selon le défilement */
+var L=document.querySelectorAll('.pill a');
+function spy(){
+  var y=scrollY+140,cur=0;
+  [['#about',0],['#work',1],['#expertise',2],['#parcours',3],['#contact',4]].forEach(function(s){var e=document.querySelector(s[0]);if(e&&e.offsetTop<=y)cur=s[1]});
+  if(scrollY<document.querySelector('#about').offsetTop-200)cur=0;
+  L.forEach(function(a,i){a.classList.toggle('on',i==cur)});
+}
+addEventListener('scroll',spy,{passive:true});spy();
+
+/* Carrousel projets */
 (function(){
   var stg=document.getElementById("stg"),cs=[].slice.call(stg.querySelectorAll(".p")),n=cs.length,i=0,timer,paused=false,dx=0,sx=null,moved=false;
   var dts=document.getElementById("dts"),reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
@@ -444,6 +490,7 @@ var L=document.querySelectorAll('.pill a');function spy(){var y=scrollY+140,cur=
   lay();restart();
 })();
 
+/* Carte d'identité : retourner au toucher (sur mobile) */
 var id=$("id");id.onclick=function(){if(!matchMedia("(hover:hover)").matches)id.classList.toggle("fl")};
 </script>
 </body>
