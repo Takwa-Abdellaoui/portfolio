@@ -202,7 +202,7 @@ footer{font-size:16px}
 </head>
 <body>
 <header class="top"><a class="logo" href="#top"><i>Ta</i><b>Takwa Abdellaoui</b></a>
-<nav class="pill" aria-label="Navigation"><a href="#about">À propos</a><a href="#work">Projets</a><a href="#expertise">Compétences</a><a href="#finance">Finance</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
+<nav class="pill" aria-label="Navigation"><a href="#about">À propos</a><a href="#work">Projets</a><a href="#expertise">Compétences</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
 <div class="ic"><a href="https://github.com/Takwa-Abdellaoui" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a><a href="https://linkedin.com/in/abdellaoui-takwa" aria-label="LinkedIn">in</a></div></header>
 
 <main id="top">
@@ -406,7 +406,7 @@ $("ch").innerHTML=C.map(function(c){return '<button data-c="'+c[0]+'"'+(c[0]=="a
 document.querySelectorAll("#ch button").forEach(function(b){b.onclick=function(){cur=b.dataset.c;document.querySelectorAll("#ch button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");draw()}});
 draw();
 var M=["Java","Spring Boot","Kafka","Angular","Python","RAG","Monte Carlo","Docker","PyTorch","Finance quantitative"],m="";for(var j=0;j<2;j++)M.forEach(function(x){m+="<span>"+x+"</span>"});$("mq").innerHTML=m;
-var L=document.querySelectorAll('.pill a');function spy(){var y=scrollY+140,cur=0;[['#about',0],['#work',1],['#expertise',2],['#finance',3],['#parcours',4],['#contact',5]].forEach(function(s){var e=document.querySelector(s[0]);if(e&&e.offsetTop<=y)cur=s[1]});if(scrollY<document.querySelector('#about').offsetTop-200)cur=0;L.forEach(function(a,i){a.classList.toggle('on',i==cur)})}addEventListener('scroll',spy,{passive:true});spy();
+var L=document.querySelectorAll('.pill a');function spy(){var y=scrollY+140,cur=0;[['#about',0],['#work',1],['#expertise',2],['#parcours',3],['#contact',4]].forEach(function(s){var e=document.querySelector(s[0]);if(e&&e.offsetTop<=y)cur=s[1]});if(scrollY<document.querySelector('#about').offsetTop-200)cur=0;L.forEach(function(a,i){a.classList.toggle('on',i==cur)})}addEventListener('scroll',spy,{passive:true});spy();
 
 /* carrousel projets */
 (function(){
